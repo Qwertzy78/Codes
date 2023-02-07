@@ -1,3 +1,20 @@
+/*
+Given an array of positive and negative numbers, develop a linear algorithm and write a C++ code to print the start index, end index and 
+sum of subarray which is having maximum sum and maximum length. Consider an array with 13 elements 4, -12, 3, 10, 4, 5, -100, 6, 7, 1, 3, 1, 4. 
+There are two subarrays having sum as 22, that is starting at 2 and ending at 5 with elements 3, 10, 4, 5 and another subarray that starts at 8 and 
+end at 13 with elements 6, 7, 1, 3, 1, 4
+
+Input Format
+
+First line contains the number of elements in array, n
+
+Next line contains the elements in the array separated by a space
+
+Output Format
+
+Print the start index, end index and sum of array having maximum sum and having maximum number of elements
+*/
+
 #include<vector>
 #include<iostream>
 using namespace std;

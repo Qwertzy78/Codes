@@ -13,3 +13,43 @@ Output Format
 
 Print minimum number of multiplications to be done
 */
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int min(int a,int b){
+    if(a<b)
+        return a;
+    return b;
+}
+
+int matrix_chain_mul(int a,int b,vector<int> A)
+{
+    if(a==b)
+        return 0;
+    int q = INT16_MAX;
+    for(int i = a;i < b; i++){
+        q = min(q,matrix_chain_mul(a,i,A)+matrix_chain_mul(i+1,b,A)+A[a-1]*A[i]*A[b]);
+    }
+    return q;
+}
+
+int main()
+{
+    int k,ele,m;
+    vector<int> p;
+    cin>>k;
+    cin >> m;
+    p.push_back(m);
+    for(int i=0;i<2*k+1;i++)
+    {
+        if(i%2==0)
+            ele = m;
+        else 
+            ele = 1;
+        p.push_back(ele);
+    }
+    p.push_back(m);
+    cout<<matrix_chain_mul(1,2*k+2,p);
+    return 0;
+}
